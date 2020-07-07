@@ -115,10 +115,10 @@ class TutorialViewController: UIViewController {
 
     @objc func tapButton() {
         // 画面遷移する
-        //        guard let nxVC = self.storyboard?.instantiateViewController(identifier: "MainViewController") as? MainViewController else
-        //        { return }
-        //                nxVC.modalPresentationStyle = .fullScreen
-        //                self.present(nxVC, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
+        guard let nxVC = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
+        nxVC.modalPresentationStyle = .fullScreen
+        self.present(nxVC, animated: true, completion: nil)
     }
 
 }
