@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (5.0.5)
+  - CHIPageControl (0.1.8):
+    - CHIPageControl/Aji (= 0.1.8)
+    - CHIPageControl/Aleppo (= 0.1.8)
+    - CHIPageControl/Chimayo (= 0.1.8)
+    - CHIPageControl/Fresno (= 0.1.8)
+    - CHIPageControl/Jalapeno (= 0.1.8)
+    - CHIPageControl/Jaloro (= 0.1.8)
+    - CHIPageControl/Paprika (= 0.1.8)
+    - CHIPageControl/Puya (= 0.1.8)
+  - CHIPageControl/Aji (0.1.8)
+  - CHIPageControl/Aleppo (0.1.8)
+  - CHIPageControl/Chimayo (0.1.8)
+  - CHIPageControl/Fresno (0.1.8)
+  - CHIPageControl/Jalapeno (0.1.8)
+  - CHIPageControl/Jaloro (0.1.8)
+  - CHIPageControl/Paprika (0.1.8)
+  - CHIPageControl/Puya (0.1.8)
+  - FloatingPanel (1.7.4)
+  - Hero (1.5.0)
+  - Kanna (5.2.2)
+  - lottie-ios (3.1.8)
+  - Pastel (0.6.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - CHIPageControl (~> 0.1.3)
+  - FloatingPanel
+  - Hero
+  - Kanna
+  - lottie-ios
+  - Pastel
+  - SDWebImage
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CHIPageControl
+    - FloatingPanel
+    - Hero
+    - Kanna
+    - lottie-ios
+    - Pastel
+    - SDWebImage
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  CHIPageControl: 76b35c8309d8dd155e869c109cc6ffc0aaa465ff
+  FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Kanna: 2c4eddaaa4bfb9a1ed19e53c0b3d42ef02838046
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: f293698adbcd3f0fa8506a92952774d9b6806ac5
+
+COCOAPODS: 1.8.3

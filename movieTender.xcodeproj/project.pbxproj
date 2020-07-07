@@ -13,9 +13,11 @@
 		AC4F5AFA24B4050A002F1698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F5AF824B4050A002F1698 /* Main.storyboard */; };
 		AC4F5AFC24B4050B002F1698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4F5AFB24B4050B002F1698 /* Assets.xcassets */; };
 		AC4F5AFF24B4050B002F1698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F5AFD24B4050B002F1698 /* LaunchScreen.storyboard */; };
+		E5D24649053C4A5E18FC285E /* Pods_movieTender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6517FC310964B27B8C86C9 /* Pods_movieTender.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F6517FC310964B27B8C86C9 /* Pods_movieTender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movieTender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4F5AEF24B4050A002F1698 /* movieTender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieTender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4F5AF224B4050A002F1698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC4F5AF424B4050A002F1698 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		AC4F5AFB24B4050B002F1698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC4F5AFE24B4050B002F1698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC4F5B0024B4050B002F1698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5C15B0A25CB7108579BD0A /* Pods-movieTender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTender.release.xcconfig"; path = "Target Support Files/Pods-movieTender/Pods-movieTender.release.xcconfig"; sourceTree = "<group>"; };
+		EDF312F89E1A3AE26398A806 /* Pods-movieTender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTender.debug.xcconfig"; path = "Target Support Files/Pods-movieTender/Pods-movieTender.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D24649053C4A5E18FC285E /* Pods_movieTender.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		178A1499AF21BA7E287854FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F6517FC310964B27B8C86C9 /* Pods_movieTender.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC4F5AE624B40509002F1698 = {
 			isa = PBXGroup;
 			children = (
 				AC4F5AF124B4050A002F1698 /* movieTender */,
 				AC4F5AF024B4050A002F1698 /* Products */,
+				BCE6FCD4B90C28F6CC2A48F5 /* Pods */,
+				178A1499AF21BA7E287854FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = movieTender;
 			sourceTree = "<group>";
 		};
+		BCE6FCD4B90C28F6CC2A48F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312F89E1A3AE26398A806 /* Pods-movieTender.debug.xcconfig */,
+				BF5C15B0A25CB7108579BD0A /* Pods-movieTender.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,10 +99,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC4F5B0324B4050B002F1698 /* Build configuration list for PBXNativeTarget "movieTender" */;
 			buildPhases = (
+				55BEBA7F76C3E01E929EBBBB /* [CP] Check Pods Manifest.lock */,
 				AC4F5AEB24B4050A002F1698 /* Sources */,
 				AC4F5AEC24B4050A002F1698 /* Frameworks */,
 				AC4F5AED24B4050A002F1698 /* Resources */,
 				AC4F5B0624B40760002F1698 /* ShellScript */,
+				BF49EB4883E6CA8FB7290F65 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		55BEBA7F76C3E01E929EBBBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-movieTender-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AC4F5B0624B40760002F1698 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +200,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		BF49EB4883E6CA8FB7290F65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-movieTender/Pods-movieTender-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-movieTender/Pods-movieTender-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-movieTender/Pods-movieTender-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -303,6 +369,7 @@
 		};
 		AC4F5B0424B4050B002F1698 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDF312F89E1A3AE26398A806 /* Pods-movieTender.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -321,6 +388,7 @@
 		};
 		AC4F5B0524B4050B002F1698 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF5C15B0A25CB7108579BD0A /* Pods-movieTender.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
