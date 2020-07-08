@@ -1,5 +1,5 @@
 //
-//  Feel.swift
+//  Enum.swift
 //  movieTender
 //
 //  Created by 岩男高史 on 2020/07/08.
@@ -9,12 +9,12 @@
 import Foundation
 
 enum FeelType: String {
-    case Cry = "Cry"
-    case Disgust = "Disgust"
-    case Joy = "Joy"
-    case Angry = "Angry"
-    case Fear = "Fear"
-    case Suprise = "Suprise"
+    case cry = "Cry"
+    case disgust = "Disgust"
+    case joy = "Joy"
+    case angry = "Angry"
+    case fear = "Fear"
+    case suprise = "Suprise"
 }
 
 enum Genres: Int {

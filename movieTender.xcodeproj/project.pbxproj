@@ -20,7 +20,6 @@
 		AC6E31C624B453E400305FA5 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6E31C524B453E400305FA5 /* MainViewController.storyboard */; };
 		AC6E31C824B45A1D00305FA5 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31C724B45A1D00305FA5 /* TrendViewController.swift */; };
 		AC6E31CA24B45A3C00305FA5 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31C924B45A3C00305FA5 /* FavoriteListViewController.swift */; };
-		AC6E31CC24B45FA700305FA5 /* FaceTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31CB24B45FA700305FA5 /* FaceTrackerModel.swift */; };
 		AC7CFB9124B4B23400FBF95F /* moveButton.json in Resources */ = {isa = PBXBuildFile; fileRef = AC7CFB9024B4B23400FBF95F /* moveButton.json */; };
 		AC7CFB9424B4B7CD00FBF95F /* UIPageViewController.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9324B4B7CD00FBF95F /* UIPageViewController.extension.swift */; };
 		AC7CFB9624B4C0F200FBF95F /* feeling.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9524B4C0F200FBF95F /* feeling.mlmodel */; };
@@ -46,7 +45,6 @@
 		AC6E31C524B453E400305FA5 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		AC6E31C724B45A1D00305FA5 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		AC6E31C924B45A3C00305FA5 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
-		AC6E31CB24B45FA700305FA5 /* FaceTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackerModel.swift; sourceTree = "<group>"; };
 		AC7CFB9024B4B23400FBF95F /* moveButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moveButton.json; path = ../../../moveButton.json; sourceTree = "<group>"; };
 		AC7CFB9324B4B7CD00FBF95F /* UIPageViewController.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.extension.swift; sourceTree = "<group>"; };
 		AC7CFB9524B4C0F200FBF95F /* feeling.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = feeling.mlmodel; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 		AC698ABC24B413BD00FD0DBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC6E31CB24B45FA700305FA5 /* FaceTrackerModel.swift */,
 				AC7CFB9E24B5AA7300FBF95F /* TMDBResponseModel.swift */,
 				AC7CFBA024B5AB5A00FBF95F /* ActorModel.swift */,
 			);
@@ -343,7 +340,6 @@
 				AC7CFBA124B5AB5A00FBF95F /* ActorModel.swift in Sources */,
 				AC7CFB9D24B59E3800FBF95F /* Enum.swift in Sources */,
 				AC4F5AF724B4050A002F1698 /* TutorialViewController.swift in Sources */,
-				AC6E31CC24B45FA700305FA5 /* FaceTrackerModel.swift in Sources */,
 				AC7CFB9624B4C0F200FBF95F /* feeling.mlmodel in Sources */,
 				AC4F5AF324B4050A002F1698 /* AppDelegate.swift in Sources */,
 				AC6E31CA24B45A3C00305FA5 /* FavoriteListViewController.swift in Sources */,

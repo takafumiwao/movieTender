@@ -18,7 +18,7 @@ import SwiftyJSON
 class MainViewController: UIViewController {
 
     // APIKEY
-    private let api_key = "7e87f5b2dfa13fb9eb4d559ac2a189e8"
+    private let apiKey = "7e87f5b2dfa13fb9eb4d559ac2a189e8"
     // 言語
     private let language = "ja-JP"
 
@@ -53,7 +53,6 @@ class MainViewController: UIViewController {
     private var responseDataArray = [TMDBResponseModel]()
     private var resultListDataArray = [TMDBResponseModel]()
     private var feelingGenresArray = [Int]()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,7 +129,9 @@ class MainViewController: UIViewController {
         // はじめに生成するページを設定
         pageViewController.setViewControllers([viewControllersArray[1]], direction: .forward, animated: true, completion: nil)
         pageViewController.view.frame = self.view.frame
-        self.view.addSubview(pageViewController.view!)
+        if let pageControllerView = pageViewController.view {
+            self.view.addSubview(pageControllerView)
+        }
 
         //PageControlの生成
         pageControl.frame = CGRect(x: 0, y: self.view.frame.height / 13, width: self.view.frame.width, height: 10)
@@ -340,7 +341,9 @@ extension MainViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let ciimage: CIImage! = CIImage(image: image)
 
             //CIDetectorAccuracyHighだと高精度（使った感じは遠距離による判定の精度）だが処理が遅くなる
-            let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyLow] )!
+            guard let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyLow] ) else {
+                return
+            }
             let faces = detector.features(in: ciimage) as NSArray
 
             if faces.count != .zero {
@@ -364,10 +367,17 @@ extension MainViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                     rects.append(faceRect)
                 }
 
-                guard let buffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+                guard let buffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+                    return
+                }
                 ciImage = CIImage(cvImageBuffer: buffer)
                 let options = [CIDetectorSmile: true, CIDetectorEyeBlink: true]
-                features = (detector.features(in: ciImage!, options: options) as? [CIFaceFeature])!
+
+                guard let decF = detector.features(in: ciImage!, options: options) as? [CIFaceFeature] else {
+                    return
+                }
+
+                features = decF
                 faceDetection(buffer)
 
                 DispatchQueue.main.async {
@@ -392,7 +402,10 @@ extension MainViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage {
         //バッファーをUIImageに変換
-        let imageBuffer: CVImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+        guard let cmSBGImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            return UIImage()
+        }
+        let imageBuffer: CVImageBuffer = cmSBGImageBuffer
         CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
         let baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0)
         let bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer)
@@ -401,17 +414,23 @@ extension MainViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = (CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue)
-        let context = CGContext(data: baseAddress, width: width, height: height, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)
-        let imageRef = context!.makeImage()
+        guard let context = CGContext(data: baseAddress, width: width, height: height, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo) else {
+            return UIImage()
+        }
+        guard let imageRef = context.makeImage() else {
+            return UIImage()
+        }
 
         CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
-        let resultImage = UIImage(cgImage: imageRef!)
+        let resultImage = UIImage(cgImage: imageRef)
         return resultImage
     }
 
     private func faceDetection(_ buffer: CVImageBuffer) {
         let request = VNDetectFaceRectanglesRequest { request, _ in
-            guard let resutls = request.results as? [VNFaceObservation] else { return }
+            guard let resutls = request.results as? [VNFaceObservation] else {
+                return
+            }
             if let image = self.ciImage, let result = resutls.first {
                 let face = self.getFaceCGImage(image: image, face: result)
                 if let cg = face {
@@ -527,29 +546,23 @@ extension MainViewController {
 
         var int = 0
         let f = FeelType.self
-        feelingArray.forEach { (feel) in
+        feelingArray.forEach { feel in
             switch feel {
-            case f.Cry.rawValue:
+            case f.cry.rawValue:
                 int = cry[Int(arc4random()) % cry.count]
-                break
-            case f.Disgust.rawValue:
+            case f.disgust.rawValue:
                 int = disgust[Int(arc4random()) % disgust.count]
-                break
-            case f.Joy.rawValue:
+            case f.joy.rawValue:
                 int = joy[Int(arc4random()) % joy.count]
-                break
-            case f.Angry.rawValue:
+            case f.angry.rawValue:
                 int = angry[Int(arc4random()) % angry.count]
-                break
-            case f.Fear.rawValue:
+            case f.fear.rawValue:
                 int = fear[Int(arc4random()) % fear.count]
-                break
             default:
                 int = suprise[Int(arc4random()) % suprise.count]
-                break
             }
             feelingGenresArray.append(int)
-    }
+        }
 
     }
 
@@ -557,14 +570,16 @@ extension MainViewController {
         let dispathchGroup = DispatchGroup()
         let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
         for feeling in feelingGenresArray {
-        dispathchGroup.enter()
-        dispatchQueue.async(group: dispathchGroup) {
-            [weak self] in
-            guard let self = self else { return }
-            let url = "https://api.themoviedb.org/3/discover/movie?api_key=\(self.api_key)&with_genres=\(feeling)&language=\(self.language)&page=1"
-            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (responseData) in
-                // JSON解析
-                switch responseData.result {
+            dispathchGroup.enter()
+            dispatchQueue.async(group: dispathchGroup) {
+                [weak self] in
+                guard let self = self else {
+                    return
+                }
+                let url = "https://api.themoviedb.org/3/discover/movie?api_key=\(self.apiKey)&with_genres=\(feeling)&language=\(self.language)&page=1"
+                AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { responseData in
+                    // JSON解析
+                    switch responseData.result {
                     case .success:
                         for i in 0...19 {
                             let json = JSON(responseData.data as Any)
@@ -573,29 +588,27 @@ extension MainViewController {
                             let overView = json["results"][i]["overview"].string
                             let average = json["results"][i]["vote_average"].double
                             let time = json["results"][i]["release_date"].string
-                            let poster_url = json["results"][i]["poster_path"].string
-                            let backdrop_path = json["results"][i]["backdrop_path"].string
-                            let resData = TMDBResponseModel(movie_id: id ?? 0, title: title ?? "", poster_url: poster_url ?? "", backdrop_path: backdrop_path ?? "", time: time ?? "", genre: "", overView: overView ?? "", average: average ?? 0)
+                            let posterUrl = json["results"][i]["poster_path"].string
+                            let backdropPath = json["results"][i]["backdrop_path"].string
+                            let resData = TMDBResponseModel(movieId: id ?? 0, title: title ?? "", posterUrl: posterUrl ?? "", backdropPath: backdropPath ?? "", time: time ?? "", genre: "", overView: overView ?? "", average: average ?? 0)
                             resData.posterImage = resData.posterLoadImage()
                             resData.backDropImage = resData.backDropLoadImage()
                             self.responseDataArray.append(resData)
                         }
-                    break
-                case .failure(let error):
-                    print(error)
-                    break
+                    case .failure(let error):
+                        print(error)
+                    }
+                    dispathchGroup.leave()
                 }
-                dispathchGroup.leave()
             }
-        }
         }
 
         dispathchGroup.notify(queue: .main) {
-                   for _ in 0...4 {
-                       self.resultListDataArray.append(self.responseDataArray[Int(arc4random()) % self.feelingGenresArray.count])
-                   }
-                   return
-               }
+            for _ in 0...4 {
+                self.resultListDataArray.append(self.responseDataArray[Int(arc4random()) % self.feelingGenresArray.count])
+            }
+            return
+        }
     }
 
     private func gotoResult() {
