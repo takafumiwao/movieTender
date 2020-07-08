@@ -10,7 +10,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="rEe-d0-PFu">
             <objects>
-                <viewController id="L2W-qe-2QJ" customClass="TutorialViewController" customModule="movieTender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="L2W-qe-2QJ" customClass="TutorialViewController" customModule="movieTender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XTj-gV-nab">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
