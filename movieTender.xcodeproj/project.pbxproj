@@ -16,6 +16,19 @@
 		AC6E31BD24B4183800305FA5 /* TutorialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6E31BC24B4183800305FA5 /* TutorialViewController.storyboard */; };
 		AC6E31C024B43FE300305FA5 /* rotate.json in Resources */ = {isa = PBXBuildFile; fileRef = AC6E31BF24B43FE300305FA5 /* rotate.json */; };
 		AC6E31C224B43FF400305FA5 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = AC6E31C124B43FF400305FA5 /* movie.json */; };
+		AC6E31C424B453C300305FA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31C324B453C300305FA5 /* MainViewController.swift */; };
+		AC6E31C624B453E400305FA5 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6E31C524B453E400305FA5 /* MainViewController.storyboard */; };
+		AC6E31C824B45A1D00305FA5 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31C724B45A1D00305FA5 /* TrendViewController.swift */; };
+		AC6E31CA24B45A3C00305FA5 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31C924B45A3C00305FA5 /* FavoriteListViewController.swift */; };
+		AC6E31CC24B45FA700305FA5 /* FaceTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E31CB24B45FA700305FA5 /* FaceTrackerModel.swift */; };
+		AC7CFB9124B4B23400FBF95F /* moveButton.json in Resources */ = {isa = PBXBuildFile; fileRef = AC7CFB9024B4B23400FBF95F /* moveButton.json */; };
+		AC7CFB9424B4B7CD00FBF95F /* UIPageViewController.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9324B4B7CD00FBF95F /* UIPageViewController.extension.swift */; };
+		AC7CFB9624B4C0F200FBF95F /* feeling.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9524B4C0F200FBF95F /* feeling.mlmodel */; };
+		AC7CFB9824B4C12600FBF95F /* CGRect.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9724B4C12600FBF95F /* CGRect.extension.swift */; };
+		AC7CFB9A24B4CCB500FBF95F /* analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = AC7CFB9924B4CCB500FBF95F /* analysis.json */; };
+		AC7CFB9D24B59E3800FBF95F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9C24B59E3800FBF95F /* Enum.swift */; };
+		AC7CFB9F24B5AA7300FBF95F /* TMDBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9E24B5AA7300FBF95F /* TMDBResponseModel.swift */; };
+		AC7CFBA124B5AB5A00FBF95F /* ActorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBA024B5AB5A00FBF95F /* ActorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +42,19 @@
 		AC6E31BC24B4183800305FA5 /* TutorialViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialViewController.storyboard; sourceTree = "<group>"; };
 		AC6E31BF24B43FE300305FA5 /* rotate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rotate.json; sourceTree = "<group>"; };
 		AC6E31C124B43FF400305FA5 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		AC6E31C324B453C300305FA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AC6E31C524B453E400305FA5 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		AC6E31C724B45A1D00305FA5 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		AC6E31C924B45A3C00305FA5 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		AC6E31CB24B45FA700305FA5 /* FaceTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackerModel.swift; sourceTree = "<group>"; };
+		AC7CFB9024B4B23400FBF95F /* moveButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moveButton.json; path = ../../../moveButton.json; sourceTree = "<group>"; };
+		AC7CFB9324B4B7CD00FBF95F /* UIPageViewController.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.extension.swift; sourceTree = "<group>"; };
+		AC7CFB9524B4C0F200FBF95F /* feeling.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = feeling.mlmodel; sourceTree = "<group>"; };
+		AC7CFB9724B4C12600FBF95F /* CGRect.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.extension.swift; sourceTree = "<group>"; };
+		AC7CFB9924B4CCB500FBF95F /* analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = analysis.json; sourceTree = "<group>"; };
+		AC7CFB9C24B59E3800FBF95F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		AC7CFB9E24B5AA7300FBF95F /* TMDBResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponseModel.swift; sourceTree = "<group>"; };
+		AC7CFBA024B5AB5A00FBF95F /* ActorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorModel.swift; sourceTree = "<group>"; };
 		CF1F16F8E989DD2D73F02031 /* Pods_movieTender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movieTender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1716E0702D456CC19F83F17 /* Pods-movieTender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTender.release.xcconfig"; path = "Target Support Files/Pods-movieTender/Pods-movieTender.release.xcconfig"; sourceTree = "<group>"; };
 		D37D71D0C930FD977852A2CE /* Pods-movieTender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTender.debug.xcconfig"; path = "Target Support Files/Pods-movieTender/Pods-movieTender.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,12 +110,15 @@
 		AC4F5AF124B4050A002F1698 /* movieTender */ = {
 			isa = PBXGroup;
 			children = (
+				AC7CFB9B24B59E2600FBF95F /* Enum */,
+				AC7CFB9224B4B7B100FBF95F /* Extensions */,
 				AC6E31BE24B43FD600305FA5 /* Lottie */,
 				AC698ABB24B4139A00FD0DBF /* Delegate */,
 				AC698ABC24B413BD00FD0DBF /* Model */,
 				AC698AB924B4136300FD0DBF /* Controller */,
 				AC698ABA24B4137F00FD0DBF /* Storyboard */,
 				AC4F5AFB24B4050B002F1698 /* Assets.xcassets */,
+				AC7CFB9524B4C0F200FBF95F /* feeling.mlmodel */,
 				AC4F5B0024B4050B002F1698 /* Info.plist */,
 			);
 			path = movieTender;
@@ -98,6 +127,7 @@
 		AC698AB924B4136300FD0DBF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AC6E31CD24B4A9E800305FA5 /* MainController */,
 				AC4F5AF624B4050A002F1698 /* TutorialViewController.swift */,
 			);
 			path = Controller;
@@ -108,6 +138,7 @@
 			children = (
 				AC4F5AFD24B4050B002F1698 /* LaunchScreen.storyboard */,
 				AC6E31BC24B4183800305FA5 /* TutorialViewController.storyboard */,
+				AC6E31C524B453E400305FA5 /* MainViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -124,6 +155,9 @@
 		AC698ABC24B413BD00FD0DBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC6E31CB24B45FA700305FA5 /* FaceTrackerModel.swift */,
+				AC7CFB9E24B5AA7300FBF95F /* TMDBResponseModel.swift */,
+				AC7CFBA024B5AB5A00FBF95F /* ActorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,10 +165,39 @@
 		AC6E31BE24B43FD600305FA5 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				AC7CFB9924B4CCB500FBF95F /* analysis.json */,
+				AC7CFB9024B4B23400FBF95F /* moveButton.json */,
 				AC6E31BF24B43FE300305FA5 /* rotate.json */,
 				AC6E31C124B43FF400305FA5 /* movie.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		AC6E31CD24B4A9E800305FA5 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E31C324B453C300305FA5 /* MainViewController.swift */,
+				AC6E31C724B45A1D00305FA5 /* TrendViewController.swift */,
+				AC6E31C924B45A3C00305FA5 /* FavoriteListViewController.swift */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
+		AC7CFB9224B4B7B100FBF95F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC7CFB9324B4B7CD00FBF95F /* UIPageViewController.extension.swift */,
+				AC7CFB9724B4C12600FBF95F /* CGRect.extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC7CFB9B24B59E2600FBF95F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				AC7CFB9C24B59E3800FBF95F /* Enum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC4F5AFF24B4050B002F1698 /* LaunchScreen.storyboard in Resources */,
+				AC7CFB9A24B4CCB500FBF95F /* analysis.json in Resources */,
 				AC6E31C224B43FF400305FA5 /* movie.json in Resources */,
+				AC7CFB9124B4B23400FBF95F /* moveButton.json in Resources */,
 				AC6E31BD24B4183800305FA5 /* TutorialViewController.storyboard in Resources */,
 				AC6E31C024B43FE300305FA5 /* rotate.json in Resources */,
+				AC6E31C624B453E400305FA5 /* MainViewController.storyboard in Resources */,
 				AC4F5AFC24B4050B002F1698 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,8 +338,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7CFB9824B4C12600FBF95F /* CGRect.extension.swift in Sources */,
+				AC7CFB9F24B5AA7300FBF95F /* TMDBResponseModel.swift in Sources */,
+				AC7CFBA124B5AB5A00FBF95F /* ActorModel.swift in Sources */,
+				AC7CFB9D24B59E3800FBF95F /* Enum.swift in Sources */,
 				AC4F5AF724B4050A002F1698 /* TutorialViewController.swift in Sources */,
+				AC6E31CC24B45FA700305FA5 /* FaceTrackerModel.swift in Sources */,
+				AC7CFB9624B4C0F200FBF95F /* feeling.mlmodel in Sources */,
 				AC4F5AF324B4050A002F1698 /* AppDelegate.swift in Sources */,
+				AC6E31CA24B45A3C00305FA5 /* FavoriteListViewController.swift in Sources */,
+				AC7CFB9424B4B7CD00FBF95F /* UIPageViewController.extension.swift in Sources */,
+				AC6E31C824B45A1D00305FA5 /* TrendViewController.swift in Sources */,
+				AC6E31C424B453C300305FA5 /* MainViewController.swift in Sources */,
 				AC4F5AF524B4050A002F1698 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
