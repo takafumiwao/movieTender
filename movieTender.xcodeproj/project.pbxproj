@@ -28,6 +28,13 @@
 		AC7CFB9D24B59E3800FBF95F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9C24B59E3800FBF95F /* Enum.swift */; };
 		AC7CFB9F24B5AA7300FBF95F /* TMDBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFB9E24B5AA7300FBF95F /* TMDBResponseModel.swift */; };
 		AC7CFBA124B5AB5A00FBF95F /* ActorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBA024B5AB5A00FBF95F /* ActorModel.swift */; };
+		AC7CFBA524B5C92B00FBF95F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBA424B5C92B00FBF95F /* ResultViewController.swift */; };
+		AC7CFBA724B5C94D00FBF95F /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CFBA624B5C94D00FBF95F /* ResultViewController.storyboard */; };
+		AC7CFBAA24B5DEE300FBF95F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBA924B5DEE300FBF95F /* CarouselView.swift */; };
+		AC7CFBAC24B5E03300FBF95F /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBAB24B5E03300FBF95F /* CarouselCell.swift */; };
+		AC7CFBAE24B5E81C00FBF95F /* PagingPerCellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBAD24B5E81C00FBF95F /* PagingPerCellFlowLayout.swift */; };
+		AC7CFBB024B5ED8200FBF95F /* ResultListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBAF24B5ED8200FBF95F /* ResultListDelegate.swift */; };
+		AC7CFBB224B5F91A00FBF95F /* TransformDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7CFBB124B5F91A00FBF95F /* TransformDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +60,13 @@
 		AC7CFB9C24B59E3800FBF95F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		AC7CFB9E24B5AA7300FBF95F /* TMDBResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponseModel.swift; sourceTree = "<group>"; };
 		AC7CFBA024B5AB5A00FBF95F /* ActorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorModel.swift; sourceTree = "<group>"; };
+		AC7CFBA424B5C92B00FBF95F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		AC7CFBA624B5C94D00FBF95F /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
+		AC7CFBA924B5DEE300FBF95F /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		AC7CFBAB24B5E03300FBF95F /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		AC7CFBAD24B5E81C00FBF95F /* PagingPerCellFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingPerCellFlowLayout.swift; sourceTree = "<group>"; };
+		AC7CFBAF24B5ED8200FBF95F /* ResultListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListDelegate.swift; sourceTree = "<group>"; };
+		AC7CFBB124B5F91A00FBF95F /* TransformDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformDelegate.swift; sourceTree = "<group>"; };
 		CF1F16F8E989DD2D73F02031 /* Pods_movieTender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movieTender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1716E0702D456CC19F83F17 /* Pods-movieTender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTender.release.xcconfig"; path = "Target Support Files/Pods-movieTender/Pods-movieTender.release.xcconfig"; sourceTree = "<group>"; };
 		D37D71D0C930FD977852A2CE /* Pods-movieTender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTender.debug.xcconfig"; path = "Target Support Files/Pods-movieTender/Pods-movieTender.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +122,7 @@
 		AC4F5AF124B4050A002F1698 /* movieTender */ = {
 			isa = PBXGroup;
 			children = (
+				AC7CFBA824B5DEA500FBF95F /* CarouselView */,
 				AC7CFB9B24B59E2600FBF95F /* Enum */,
 				AC7CFB9224B4B7B100FBF95F /* Extensions */,
 				AC6E31BE24B43FD600305FA5 /* Lottie */,
@@ -125,8 +140,9 @@
 		AC698AB924B4136300FD0DBF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AC6E31CD24B4A9E800305FA5 /* MainController */,
 				AC4F5AF624B4050A002F1698 /* TutorialViewController.swift */,
+				AC6E31CD24B4A9E800305FA5 /* MainController */,
+				AC7CFBA424B5C92B00FBF95F /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +153,7 @@
 				AC4F5AFD24B4050B002F1698 /* LaunchScreen.storyboard */,
 				AC6E31BC24B4183800305FA5 /* TutorialViewController.storyboard */,
 				AC6E31C524B453E400305FA5 /* MainViewController.storyboard */,
+				AC7CFBA624B5C94D00FBF95F /* ResultViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -146,6 +163,8 @@
 			children = (
 				AC4F5AF224B4050A002F1698 /* AppDelegate.swift */,
 				AC4F5AF424B4050A002F1698 /* SceneDelegate.swift */,
+				AC7CFBAF24B5ED8200FBF95F /* ResultListDelegate.swift */,
+				AC7CFBB124B5F91A00FBF95F /* TransformDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -195,6 +214,16 @@
 				AC7CFB9C24B59E3800FBF95F /* Enum.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		AC7CFBA824B5DEA500FBF95F /* CarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				AC7CFBA924B5DEE300FBF95F /* CarouselView.swift */,
+				AC7CFBAB24B5E03300FBF95F /* CarouselCell.swift */,
+				AC7CFBAD24B5E81C00FBF95F /* PagingPerCellFlowLayout.swift */,
+			);
+			path = CarouselView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7CFBA724B5C94D00FBF95F /* ResultViewController.storyboard in Resources */,
 				AC4F5AFF24B4050B002F1698 /* LaunchScreen.storyboard in Resources */,
 				AC7CFB9A24B4CCB500FBF95F /* analysis.json in Resources */,
 				AC6E31C224B43FF400305FA5 /* movie.json in Resources */,
@@ -335,14 +365,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7CFBA524B5C92B00FBF95F /* ResultViewController.swift in Sources */,
 				AC7CFB9824B4C12600FBF95F /* CGRect.extension.swift in Sources */,
 				AC7CFB9F24B5AA7300FBF95F /* TMDBResponseModel.swift in Sources */,
+				AC7CFBB224B5F91A00FBF95F /* TransformDelegate.swift in Sources */,
 				AC7CFBA124B5AB5A00FBF95F /* ActorModel.swift in Sources */,
+				AC7CFBAA24B5DEE300FBF95F /* CarouselView.swift in Sources */,
 				AC7CFB9D24B59E3800FBF95F /* Enum.swift in Sources */,
 				AC4F5AF724B4050A002F1698 /* TutorialViewController.swift in Sources */,
 				AC7CFB9624B4C0F200FBF95F /* feeling.mlmodel in Sources */,
 				AC4F5AF324B4050A002F1698 /* AppDelegate.swift in Sources */,
+				AC7CFBAC24B5E03300FBF95F /* CarouselCell.swift in Sources */,
+				AC7CFBB024B5ED8200FBF95F /* ResultListDelegate.swift in Sources */,
 				AC6E31CA24B45A3C00305FA5 /* FavoriteListViewController.swift in Sources */,
+				AC7CFBAE24B5E81C00FBF95F /* PagingPerCellFlowLayout.swift in Sources */,
 				AC7CFB9424B4B7CD00FBF95F /* UIPageViewController.extension.swift in Sources */,
 				AC6E31C824B45A1D00305FA5 /* TrendViewController.swift in Sources */,
 				AC6E31C424B453C300305FA5 /* MainViewController.swift in Sources */,

@@ -21,10 +21,10 @@ class TMDBResponseModel: NSObject {
     private var posterUrl: String?
     // 背景画像
     private var backdropPath: String?
-    // イメージ
-    private var image: UIImageView?
-    var posterImage: UIImageView?
-    var backDropImage: UIImageView?
+    // ポスターイメージ
+    private var posterImage: UIImageView?
+    // バックドロップイメージ
+    private var backDropImage: UIImageView?
     // 時間
     private var time: String?
     // ジャンル
@@ -37,6 +37,7 @@ class TMDBResponseModel: NSObject {
     var actorDataArray = [ActorModel]()
 
     init(movieId: Int?, title: String?, posterUrl: String?, backdropPath: String?, time: String?, genre: String?, overView: String?, average: Double?) {
+        super.init()
         self.movieId = movieId
         self.title = title
         self.posterUrl = posterUrl
@@ -45,6 +46,9 @@ class TMDBResponseModel: NSObject {
         self.genre = genre
         self.overView = overView
         self.average = average
+
+        posterImage = self.posterLoadImage()
+        backDropImage = self.backDropLoadImage()
     }
 
     required init?(coder: NSCoder) {
@@ -69,16 +73,64 @@ class TMDBResponseModel: NSObject {
         if let average = average { coder.encode(average, forKey: "average") }
     }
 
+    func getTitle() -> String {
+        guard let title = title else {
+            return ""
+        }
+        return title
+    }
+
+    func getTime() -> String {
+        guard let time = time else {
+            return ""
+        }
+        return time
+    }
+
+    func getAverage() -> String {
+        guard let average = average else {
+            return ""
+        }
+        return "\(average)"
+    }
+
+    func getPosterImage() -> UIImageView {
+        guard let imageView = posterImage else {
+            return UIImageView()
+        }
+
+        return imageView
+    }
+
+    func getBackDropImage() -> UIImageView {
+        guard let imageView = backDropImage else {
+            return UIImageView()
+        }
+
+        return imageView
+    }
+
+    func getPosterImageUrl() -> String {
+        guard let url = posterUrl else {
+            return ""
+        }
+
+        return url
+    }
+
     // posterimage読み込み関数
-    func posterLoadImage() -> UIImageView? {
+    private func posterLoadImage() -> UIImageView? {
         if let posterUrl = posterUrl {
-            posterImage?.sd_setImage(with: URL(string: posterUrl), completed: nil)
+            guard let url = URL(string: "https://image.tmdb.org/t/p/w200" + posterUrl) else {
+                return UIImageView()
+            }
+            posterImage?.sd_setImage(with: url, completed: nil)
         }
         return posterImage
     }
 
     // backDropImage読み込み関数
-    func backDropLoadImage() -> UIImageView? {
+    private func backDropLoadImage() -> UIImageView? {
         if let backdropPath = backdropPath {
             backDropImage?.sd_setImage(with: URL(string: backdropPath), completed: nil)
         }

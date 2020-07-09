@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TWd-MK-O2M">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Result View Controller-->
+        <scene sceneID="Rzl-Zo-aFb">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="TWd-MK-O2M" customClass="ResultViewController" customModule="movieTender" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FIJ-oz-fd7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tss-uc-Mu9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" image="multiply" catalog="system" id="jAB-mb-baO">
+                                        <connections>
+                                            <action selector="tapCancel:" destination="TWd-MK-O2M" id="8Dw-qH-1HM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TyO-iw-AgU"/>
+                                    <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="rGW-3I-NFG">
+                                        <connections>
+                                            <action selector="tapFavorite:" destination="TWd-MK-O2M" id="37r-Mz-kmn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tss-uc-Mu9" firstAttribute="trailing" secondItem="mi8-zj-V3n" secondAttribute="trailing" id="1De-8q-hh1"/>
+                            <constraint firstItem="tss-uc-Mu9" firstAttribute="leading" secondItem="mi8-zj-V3n" secondAttribute="leading" id="S2K-gc-t5R"/>
+                            <constraint firstItem="tss-uc-Mu9" firstAttribute="top" secondItem="mi8-zj-V3n" secondAttribute="top" id="u7c-Kw-81r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mi8-zj-V3n"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolbar" destination="tss-uc-Mu9" id="lVG-jP-9Aq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLk-AV-5bq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
+</document>

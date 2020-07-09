@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     private let output = AVCaptureVideoDataOutput()
 
     // PageView(Main)
+    private let pastelView = PastelView()
     private let favoriteViewController = FavoriteListViewController()
     private let trendViewController = TrendViewController()
     private let favoriteButton = UIButton()
@@ -60,8 +61,6 @@ class MainViewController: UIViewController {
         pageViewController.dataSource = self
         // カメラの設定
         setupCamera()
-        // PastelViewの設定
-        settingPastel()
         // viewControllerの設定
         settingVC()
 
@@ -69,11 +68,16 @@ class MainViewController: UIViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // PastelViewの設定
+        settingPastel()
+    }
+
     private func settingPastel() {
 
-        let pastelView = PastelView(frame: view.bounds)
-        self.view.insertSubview(pastelView, at: 0)
-
+        //        let pastelView = PastelView(frame: view.bounds)
+        pastelView.frame = view.bounds
         // Custom Direction
         pastelView.startPastelPoint = .bottomLeft
         pastelView.endPastelPoint = .topRight
@@ -91,6 +95,7 @@ class MainViewController: UIViewController {
                               UIColor(red: 28 / 255, green: 225 / 255, blue: 187 / 255, alpha: 1.0)])
 
         pastelView.startAnimation()
+        self.view.insertSubview(pastelView, at: 0)
 
     }
 
@@ -136,8 +141,8 @@ class MainViewController: UIViewController {
         //PageControlの生成
         pageControl.frame = CGRect(x: 0, y: self.view.frame.height / 13, width: self.view.frame.width, height: 10)
         pageControl.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.595524013, green: 0.06280236691, blue: 0.4608084559, alpha: 1)
-        pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.currentPageIndicatorTintColor = UIColor.white
 
         // PageControlするページ数を設定する
         pageControl.numberOfPages = 3
@@ -280,7 +285,6 @@ extension MainViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     private func startCamera() {
         // 操作を無効にする
         pageViewController.isPagingEnabled = false
-        //        startButton.isEnabled = false
         favoriteButton.isEnabled = false
         trendButton.isEnabled = false
         pageControl.isEnabled = false
@@ -309,7 +313,6 @@ extension MainViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         }
 
-        //        startButton.isHidden = true
         favoriteButton.isHidden = true
         trendButton.isHidden = true
         pageControl.isHidden = true
@@ -530,8 +533,7 @@ extension MainViewController {
         settingAPI(feelingArray: feelingArray)
         // APIを呼ぶ
         callTMDBAPI()
-        // 呼んだら画面遷移
-        gotoResult()
+
     }
 
     private func settingAPI(feelingArray: [String]) {
@@ -569,14 +571,14 @@ extension MainViewController {
     private func callTMDBAPI() {
         let dispathchGroup = DispatchGroup()
         let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
-        for feeling in feelingGenresArray {
+        for index in 0 ..< 4 {
             dispathchGroup.enter()
             dispatchQueue.async(group: dispathchGroup) {
                 [weak self] in
                 guard let self = self else {
                     return
                 }
-                let url = "https://api.themoviedb.org/3/discover/movie?api_key=\(self.apiKey)&with_genres=\(feeling)&language=\(self.language)&page=1"
+                let url = "https://api.themoviedb.org/3/discover/movie?api_key=\(self.apiKey)&with_genres=\(self.feelingGenresArray[index])&language=\(self.language)&page=1"
                 AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { responseData in
                     // JSON解析
                     switch responseData.result {
@@ -591,8 +593,6 @@ extension MainViewController {
                             let posterUrl = json["results"][i]["poster_path"].string
                             let backdropPath = json["results"][i]["backdrop_path"].string
                             let resData = TMDBResponseModel(movieId: id ?? 0, title: title ?? "", posterUrl: posterUrl ?? "", backdropPath: backdropPath ?? "", time: time ?? "", genre: "", overView: overView ?? "", average: average ?? 0)
-                            resData.posterImage = resData.posterLoadImage()
-                            resData.backDropImage = resData.backDropLoadImage()
                             self.responseDataArray.append(resData)
                         }
                     case .failure(let error):
@@ -607,14 +607,66 @@ extension MainViewController {
             for _ in 0...4 {
                 self.resultListDataArray.append(self.responseDataArray[Int(arc4random()) % self.feelingGenresArray.count])
             }
+
+            // 呼んだら画面遷移
+            self.gotoResult()
             return
         }
     }
 
     private func gotoResult() {
-        //        let nx: ResultListViewController = storyboard!.instantiateViewController(withIdentifier: "result") as! ResultListViewController
-        //        nx.modalPresentationStyle = .fullScreen
-        //        nx.modalTransitionStyle = .coverVertical
-        //        present(nx, animated: true, completion: nil)
+        // 画面遷移する
+        let storyboard = UIStoryboard(name: "ResultViewController", bundle: nil)
+        guard let nxVC = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else {
+            return
+        }
+        nxVC.transformDelegate = self
+        nxVC.modalPresentationStyle = .fullScreen
+        nxVC.modalTransitionStyle = .coverVertical
+        self.present(nxVC, animated: true, completion: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.resultList = resultListDataArray
+    }
+}
+
+extension MainViewController: TransformDelegate {
+    func backTheAnimation() {
+        animationView.stop()
+        animationView = settingLottie(name: "moveButton")
+        let animation = setupAnimation()
+        let width = self.view.frame.width
+        let x = self.view.center.x
+        let y = self.view.center.y
+        animationView.frame.size = CGSize(width: width / 2, height: width / 2)
+        animationView.center = CGPoint(x: x, y: y)
+        animationView.layer.add(animation, forKey: nil)
+
+        pastelView.startAnimation()
+        favoriteButton.isHidden = false
+        trendButton.isHidden = false
+        pageControl.isHidden = false
+        favoriteLabel.isHidden = false
+        trendLabel.isHidden = false
+
+        // 操作を有効にする
+        pageViewController.isPagingEnabled = true
+        favoriteButton.isEnabled = true
+        trendButton.isEnabled = true
+        pageControl.isEnabled = true
+
+        feelingArray = []
+        features = []
+        findface = []
+        feelingArray = []
+        responseDataArray = []
+        resultListDataArray = []
+        feelingGenresArray = []
+
     }
 }
